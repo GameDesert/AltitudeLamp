@@ -1,0 +1,6 @@
+{
+    "pin": 0,    
+    "light_count": 8,
+    "ap_ssid": "[access point name]",
+    "ap_key": "[access point password]"
+}
