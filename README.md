@@ -20,7 +20,7 @@ Here is a description of each file:
 2. Solder your lightstrip's data wire to GPIO pin 0 (usually labelled *1* on the board, but again, always consult a pinout guide), or any other suitable GPIO pin.
 3. Finally, solder your lightstrip's power line to the 3.3V pin on the Pico (not the 5V, and definitely not 3V3_EN. Once more, **always consult a pinout guide!!**). This is because WS2812 lights have a certain tolerance where the data pin must be somewhere around 70% of the power pin's voltage *at a minimum*, a requirement not satisfied when the lights are connected to the Pico W's 5V output which can lead to weirdly coloured, damaged, or malfunctioning lights.
 
-![Circuit diagram for Raspberry Pi Pico W and WS2812 lightstrip](https://kotla.eu/files/altitude_board_diagram.svg)
+![Circuit diagram for Raspberry Pi Pico W and WS2812 lightstrip](https://kotla.eu/files/altitude_board_diagram.png)
 
 ### Adding Light Patterns
 1. Define a new pattern in the patterns.json file, specifying the name of the pattern (as the dictionary key), the number of frames, the framerate in seconds, and the frames themselves (with RGB values for each pixel). Ensure there are only as many pixel colour definitions as there are pixels attached to your Pico W (or similar board, but this project really is intended for the Pico W) and as defined in the `light_count` attribute in the `config.json` file. Also, the real number of frames should match the number you declare under the `frame_count` variable in `patterns.json`.
