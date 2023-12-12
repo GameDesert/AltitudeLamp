@@ -20,4 +20,7 @@ Here is a description of each file:
 5. Just like that, you've added a new pattern! See below to find out how to configure the access point and deploy the Pico W.
 
 ### Configuration and Deployment
-1.
+1. In `config.json`, replace the values for `[access point name]` and `[access point password]` with you preferred values for the name and password to the WiFi access point, respectively. These should probably be simple strings; I haven't tested it but WiFi SSIDs tend to be quite fragile things when it comes to emoji and stuff.
+2. Make sure the value for `pin` matches the GPIO pin to which your lightstrip's data lead is soldered, by default pin 0 here.
+3. Make sure the value for `light_count` accurately describes the precise number of lights there are on your strip, or funny things might happen (not haha funny, more ohnomylightshavestoppedworkingandidon'tknowwhy funny).
+4. Finally, save everything and plug your Pico W into an appropriate power source (see manufacturer's instructions) to test it out. You should see a new WiFi network appear on any nearby mobile devices that, when connected, will let you navigate to the IP address `192.168.4.1` to access the interface (I've tried changing this address, I don't know how to, so it's just that unwieldy set of random numbers). *Please note: This WiFi network does not have access to the internet. It's not a portable hotspot.*
