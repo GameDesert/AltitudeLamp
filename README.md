@@ -6,7 +6,8 @@ The AltitudeLamp is a resin project I built with an integrated WS2812 lightstrip
 Flash MicroPython firmware to the Pico W, and then upload all the files in this repo.
 Here is a description of each file:
 
--
+- `patterns.json`
+Defines each light pattern by splitting it into frames, where each frame holds one RGB array per pixel. Also defined is the frame count, which must match the number of frames; and the rate, which is the framerate defined in seconds (or decimal variations thereupon).
 -
 -
 -
