@@ -12,6 +12,10 @@ Here is a description of each file:
 -
 
 ## How To Configure
+### Setting Up Board and Lights
+
+![Circuit diagram for Raspberry Pi Pico W and WS2812 lightstrip](https://kotla.eu/files/altitude_board_diagram.svg)
+
 ### Adding Light Patterns
 1. Define a new pattern in the patterns.json file, specifying the name of the pattern (as the dictionary key), the number of frames, the framerate in seconds, and the frames themselves (with RGB values for each pixel). Ensure there are only as many pixel colour definitions as there are pixels attached to your Pico W (or similar board, but this project really is intended for the Pico W) and as defined in the `light_count` attribute in the `config.json` file. Also, the real number of frames should match the number you declare under the `frame_count` variable in `patterns.json`.
 2. In `main.py`, there is a function called `srvr_ctrl_thread`. Inside that function is a while loop. Inside that while loop is a try/except statement. In the try portion of the try/except statement are 2 important groups of lines, the first taking the shape `[pattern]_active = request.find('/?[abbreviation]')`. To add a pattern, create a new line like this right underneath replacing `[pattern]` in the variable name with a memorable name for your pattern, it doesn't really matter what it is as long as it doesn't conflict with any other variable names. Then, replace `[abbreviation]` with the name or abbreviation you wish to represent your pattern in the interface URL when the user clicks on the corresponding button (see step 4).
