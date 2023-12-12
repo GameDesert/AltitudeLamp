@@ -14,8 +14,10 @@ Here is a description of each file:
 ## How To Configure
 ### Setting Up Board and Lights
 ***WARNING: Please do not follow these instructions blindly. Make sure you always know exactly what you are doing and why you are doing it.***
+
 ***ANOTHER WARNING: Ensure your lightstrip's data arrows point away from your microcontroller and where you are soldering to. The data must travel away, not towards.***
-***YET ANOTHER WARNING: Always stay safe when working around electricity or hot implements such as soldering irons. Children should, at best, not follow any of the steps described in this guide, and at least get the supervision of a responsible adult if they choose to do so anyway.***
+
+***YET ANOTHER WARNING: Always stay safe when working around electricity or hot implements such as soldering irons. Children should always get the supervision of a responsible adult if they choose to do anything described in this guide.***
 1. Solder your lightstrip's ground to any of the Pico W's ground pins (these can be identified by the square-ended, sharp cornered copper traces, but always double check a pinout guide).
 2. Solder your lightstrip's data wire to GPIO pin 0 (usually labelled *1* on the board, but again, always consult a pinout guide), or any other suitable GPIO pin.
 3. Finally, solder your lightstrip's power line to the 3.3V pin on the Pico (not the 5V, and definitely not 3V3_EN. Once more, **always consult a pinout guide!!**). This is because WS2812 lights have a certain tolerance where the data pin must be somewhere around 70% of the power pin's voltage *at a minimum*, a requirement not satisfied when the lights are connected to the Pico W's 5V output which can lead to weirdly coloured, damaged, or malfunctioning lights.
